@@ -27,9 +27,7 @@ function InputArea() {
       <input
         placeholder="https://boraozkoc.com"
         onChange={(e) => isValidInput(e.target.value)}
-        className={`${
-          isValid ? " border-green-500" : "border-2 border-red-500"
-        } border-2 p-2 rounded text-black outline-none focus:ring-1 focus:ring-blue-500`}
+        className="border-2 p-2 rounded text-black outline-none focus:ring-1 focus:ring-blue-500"
       />
       <button
         className={`${
