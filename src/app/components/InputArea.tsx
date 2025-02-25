@@ -18,7 +18,7 @@ function InputArea() {
 
   return (
     <form
-      className="flex gap-2 justify-center items-center flex-col"
+      className="flex gap-8 justify-center items-center flex-col pt-4"
       onSubmit={(e) => {
         e.preventDefault();
         router.push(`/generate?url=${inputValue}`);
