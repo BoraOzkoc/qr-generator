@@ -16,7 +16,7 @@ function QRCodeGenerator({ text }: QRCodeGeneratorProps) {
   return (
     <div className="flex flex-col items-center gap-4">
       <div
-        className={`flex justify-center items-center border transition-opacity duration-[3000ms] ${
+        className={`flex justify-center items-center border rounded-xl p-3 transition-opacity duration-[3000ms] ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >

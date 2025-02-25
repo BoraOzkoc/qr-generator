@@ -60,9 +60,9 @@ export default function Generate() {
             </button>
             <button
               onClick={handleDownload}
-              className="p-2 h-[40px] w-[40px] flex group justify-center items-center border border-black dark:border-white hover:border-2 dark:hover:border-white rounded-lg transition-colors"
+              className="p-2 h-[40px] w-[40px] flex group justify-center items-center border border-black dark:border-white hover:border-2 dark:hover:border-white rounded-lg transition-all duration-300"
             >
-              <MdFileDownload className="group-hover:translate-y-0.5 transition-all duration-300" />
+              <MdFileDownload className="group-hover:translate-y-0.5 transition-transform duration-300" />
             </button>
           </div>
         </div>

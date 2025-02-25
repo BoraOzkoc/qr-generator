@@ -29,16 +29,18 @@ function InputArea() {
         onChange={(e) => isValidInput(e.target.value)}
         className="border-2 p-2 rounded text-black outline-none focus:ring-1 focus:ring-blue-500"
       />
-      <button
-        className={`${
-          isValid
-            ? "border border-blue-500 hover:bg-blue-500 text-black dark:text-white hover:dark:text-white hover:text-white "
-            : "bg-gray-400 cursor-default "
-        } text-white p-2 rounded-xl border-2`}
-        disabled={!isValid}
-      >
-        Generate
-      </button>
+      <div className="flex flex-row gap-2 w-full justify-center items-center h-[40px]">
+        <button
+          className={`${
+            isValid
+              ? "border border-black dark:border-white hover:border-2 text-black transition-all duration-300 dark:text-white hover:dark:text-white hover:text-white "
+              : "bg-gray-400 cursor-default "
+          } text-white p-2 rounded-xl border`}
+          disabled={!isValid}
+        >
+          Generate
+        </button>
+      </div>
     </form>
   );
 }
