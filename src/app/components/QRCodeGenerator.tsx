@@ -1,13 +1,25 @@
 import { useQRCode } from "next-qrcode";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 interface QRCodeGeneratorProps {
   text: string;
 }
+
 function QRCodeGenerator({ text }: QRCodeGeneratorProps) {
-  const { Canvas } = useQRCode();
+  const { SVG } = useQRCode();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="flex justify-center items-center border border-x-zinc-500 w-full h-full">
-      <Canvas
+    <div
+      className={`flex justify-center items-center border transition-opacity duration-[3000ms] ${
+        isLoaded ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <SVG
         text={text}
         options={{
           errorCorrectionLevel: "M",
