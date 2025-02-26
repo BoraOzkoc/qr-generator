@@ -8,14 +8,17 @@ function InputArea() {
   const [savedQrCode, setSavedQrCode] = useState<string[]>([]);
   const urlRegex =
     /^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i;
+
   useEffect(() => {
     const savedCodes = localStorage.getItem("savedQrCode");
     if (savedCodes) {
       setSavedQrCode(JSON.parse(savedCodes));
-      console.log(savedCodes);
-      console.log(savedQrCode);
     }
   }, []);
+
+  useEffect(() => {
+    console.log("Updated savedQrCode:", savedQrCode);
+  }, [savedQrCode]);
 
   function isValidInput(input: string) {
     setInputValue(input);
