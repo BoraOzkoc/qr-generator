@@ -3,7 +3,7 @@ import { LinearGradient } from "react-text-gradients";
 
 function WelcomePage() {
   return (
-    <div className="p-[4px] rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+    <div className="p-[4px] rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 min-h-0.5">
       <div className="text-white bg-black rounded-3xl h-[50vh] w-[600px] flex flex-col justify-center items-center text-center">
         <div className="flex flex-col gap-y-2 px-16">
           <LinearGradient gradient={["to left", "#ff68f0, #17acff"]}>

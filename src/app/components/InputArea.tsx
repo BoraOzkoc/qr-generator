@@ -16,10 +16,6 @@ function InputArea() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("Updated savedQrCode:", savedQrCode);
-  }, [savedQrCode]);
-
   function isValidInput(input: string) {
     setInputValue(input);
 

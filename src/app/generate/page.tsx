@@ -12,6 +12,7 @@ export default function Generate() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = () => {
+    console.debug(containerRef.current);
     if (containerRef.current) {
       const canvas = containerRef.current.querySelector("canvas");
       if (canvas) {
@@ -42,6 +43,7 @@ export default function Generate() {
         <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-2 rounded-2xl h-[300px] w-[300px] aspect-square flex flex-col justify-center items-center gap-6 text-center">
           <div
             id="sticker"
+            ref={containerRef}
             className={`relative flex flex-col w-full h-full gap-6 justify-center items-center rounded-xl bg-black`}
           >
             <QRCodeGenerator text={url} />
