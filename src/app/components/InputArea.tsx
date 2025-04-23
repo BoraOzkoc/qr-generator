@@ -27,6 +27,12 @@ function InputArea() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (savedQrCode.includes(inputValue)) {
+      router.push(`/generate?url=${inputValue}`);
+      return;
+    }
+
     const updatedCodes = [...savedQrCode, inputValue];
     setSavedQrCode(updatedCodes);
     localStorage.setItem("savedQrCode", JSON.stringify(updatedCodes));
