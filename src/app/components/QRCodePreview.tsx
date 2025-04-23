@@ -17,7 +17,7 @@ function QRCodePreview({ url }: QRCodePreviewProps) {
       ref={containerRef}
       className="flex overflow-hidden flex-col h-7 hover:h-20 justify-start transition-[height] duration-500 ease-in-out items-center text-center"
     >
-      <div>{url}</div>
+      <div className="underline">{url}</div>
       <div className="flex flex-row w-fit justify-center items-start pt-3 gap-10">
         <div className="flex border rounded-md justify-center items-center h-10 w-10 ">
           <QRCodeGenerator text={url} targetWidth={2} />
