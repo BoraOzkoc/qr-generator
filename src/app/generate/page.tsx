@@ -4,6 +4,7 @@ import QRCodeGenerator from "../components/QRCodeGenerator";
 import { useRef } from "react";
 import { MdFileDownload } from "react-icons/md";
 import { LinearGradient } from "react-text-gradients";
+import { downloadQRCode } from "../utilities/qrDownload";
 
 export default function Generate() {
   const urlParam = useSearchParams();
@@ -12,18 +13,8 @@ export default function Generate() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = () => {
-    console.debug(containerRef.current);
-    if (containerRef.current) {
-      const canvas = containerRef.current.querySelector("canvas");
-      if (canvas) {
-        const link = document.createElement("a");
-        link.download = `qrcode.png`;
-        link.href = canvas.toDataURL("image/png");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    }
+    console.debug(containerRef);
+    downloadQRCode(containerRef);
   };
   if (!url)
     return (
@@ -46,7 +37,7 @@ export default function Generate() {
             ref={containerRef}
             className={`relative flex flex-col w-full h-full gap-6 justify-center items-center rounded-xl bg-black`}
           >
-            <QRCodeGenerator text={url} />
+            <QRCodeGenerator text={url} targetWidth={200} />
           </div>
         </div>
         <div className="flex flex-row gap-2 w-[300px] justify-between">

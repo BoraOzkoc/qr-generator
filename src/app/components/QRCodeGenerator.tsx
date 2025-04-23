@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 
 interface QRCodeGeneratorProps {
   text: string;
+  targetWidth: number;
 }
 
-function QRCodeGenerator({ text }: QRCodeGeneratorProps) {
+function QRCodeGenerator({ text, targetWidth }: QRCodeGeneratorProps) {
   const { Canvas } = useQRCode();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -25,8 +26,8 @@ function QRCodeGenerator({ text }: QRCodeGeneratorProps) {
           options={{
             errorCorrectionLevel: "M",
             margin: 3,
-            scale: 4,
-            width: 200,
+            scale: 1,
+            width: targetWidth,
             color: {
               dark: "#ffffff",
               light: "#000000",
