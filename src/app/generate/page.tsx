@@ -5,17 +5,18 @@ import { useRef } from "react";
 import { MdFileDownload } from "react-icons/md";
 import { LinearGradient } from "react-text-gradients";
 import { downloadQRCode } from "../utilities/qrDownload";
+import { Suspense } from "react";
 
-export default function Generate() {
+function GenerateContent() {
   const urlParam = useSearchParams();
   const router = useRouter();
   const url = urlParam.get("url");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = () => {
-    console.debug(containerRef);
     downloadQRCode(containerRef);
   };
+
   if (!url)
     return (
       <div className="flex flex-col justify-center items-center h-screen">
@@ -23,8 +24,9 @@ export default function Generate() {
         <button onClick={() => router.push("/")}>Go back</button>
       </div>
     );
+
   return (
-    <div className=" flex flex-col justify-center items-center gap-6 h-screen">
+    <div className="flex flex-col justify-center items-center gap-6 h-screen">
       <div className="flex flex-col justify-center items-center gap-6">
         <LinearGradient gradient={["to left", "#ff68f0, #17acff"]}>
           <h1 className="text-center text-2xl font-bold text-white">
@@ -46,7 +48,7 @@ export default function Generate() {
             onClick={() => router.push("/")}
           >
             <svg
-              className=" group-hover:-translate-x-2 group-hover:scale-125 transition-all duration-300 w-6 h-6"
+              className="group-hover:-translate-x-2 group-hover:scale-125 transition-all duration-300 w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -69,5 +71,13 @@ export default function Generate() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Generate() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <GenerateContent />
+    </Suspense>
   );
 }
