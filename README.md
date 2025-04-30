@@ -19,7 +19,7 @@ A modern, feature-rich web application built with Next.js 13 and React 18, desig
 - [React 18](https://reactjs.org/) - JavaScript library for user interfaces
 - [TypeScript](https://www.typescriptlang.org/) - Type safety and better DX
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [qrcode.react](https://npmjs.com/package/qrcode.react) - React component for QR generation
+- [next-qrcode](https://www.npmjs.com/package/next-qrcode) - Next.js optimized QR code generation
 - [react-text-gradients](https://npmjs.com/package/react-text-gradients) - Text gradient effects
 - [react-icons](https://react-icons.github.io/react-icons/) - Icon components
 - [next/navigation](https://nextjs.org/docs/app/api-reference/functions/use-router) - App router navigation
