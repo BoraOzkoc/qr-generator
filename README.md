@@ -1,5 +1,7 @@
 # QR Generator
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue)](https://qr-code-generator-umber-delta.vercel.app)
+
 A modern, feature-rich web application built with Next.js 13 and React 18, designed to create and manage QR codes effortlessly. This project combines the power of TypeScript, Tailwind CSS, and modern React patterns to deliver a seamless QR code generation experience. With real-time preview, gradient UI elements, and a history tracking system, it provides a comprehensive solution for all your QR code needs.
 
 ## Features
